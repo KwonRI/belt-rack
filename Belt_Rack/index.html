@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Online Belt Rack</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 <!-- CSS only -->
@@ -16,18 +16,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
 <style>
     body{
-    font-family: 'Shantell Sans', cursive;
+        font-family: 'Shantell Sans', cursive;
+        background: lemonchiffon;
     }
 </style>
 </head>
 <body>
     <div id="wrap">
         <div id="header">
-            <h1 id="title">Online Belt Rack</h1>
         </div>
         <div id="nav">
         </div>
         <div id="container">
+            <div id="titleDiv">
+                <img id="gi-icon" src="img/gi.png">
+                <h1 id="title">jiu jitsu Belt Rack</h1>
+            </div>
             <div id="rack">
                 <div class="board">
                     <div id="5" class="beltWrap">
@@ -100,7 +104,7 @@
                             <div class="black"></div>
                             <div id="stripe white2" class="stripe"></div>
                             <div class="black"></div>
-                            <div id="stripe white1" class="stripe"></div>
+                            <div id="stripe white1" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" ></div>
                             <div class="black"></div>
                         </div>
                         <div id="whiteTail"></div>
@@ -115,7 +119,7 @@
                 </button>
             </div>
             
-            <!-- Modal -->
+            <!-- setting Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -174,14 +178,35 @@
                             <br>
                         </div>
                         <div class="modal-footer">
-                            <button onclick="cancle()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button onclick="apply()"type="button" class="btn btn-primary" >Apply</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="capture">
-                <button type="button" class="btn btn-dark">capture</button>   
+                <button type="button" class="btn btn-dark" disabled>capture</button>   
+            </div>
+            <div>
+            <!-- date modal -->
+            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">promotion date</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="date" id="promotionDate">
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="date()"type="button" class="btn btn-primary" >Apply</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
             </div>
         </div>
         <div id="footer">
@@ -230,10 +255,6 @@
         }
     }
 
-    function cancle(){
-            
-    }
-
     function apply(){
         var arr = ["white", "blue", "purple", "brown", "black"];
 
@@ -252,6 +273,12 @@
                 document.getElementById(i+1).style.display = "none";
             }
         }
+    }
+    function stripe(obj){
+        // console.log(obj.attr("id"));
+    }
+    function date(obj){
+        
     }
     
 </script>
