@@ -23,6 +23,7 @@ html{
 #container{
     margin: 0 auto;
     width: 75%;
+    max-width: 800px;
 }
 #rack{
     margin : 0 auto;
@@ -35,7 +36,6 @@ html{
         height: 19%;
         margin-top: 0.5%;
         background-color: burlywood;
-        cursor: pointer;
         /* 벨트 세로 정렬 */
         display: flex;
         align-items: center;
@@ -98,7 +98,9 @@ html{
                 width: 12.5%;
                 height: 100%;
                 float: left;
-
+                font-size: 11px;
+                text-align: center;
+                cursor: pointer;
                     }
         #whiteTail{
             background-color: white;

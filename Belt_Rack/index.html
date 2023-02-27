@@ -98,13 +98,13 @@
                         <div id="white" class="belt"></div>
                         <div class="stripeWrap">
                             <div class="black"></div>
-                            <div id="stripe white4" class="stripe"></div>
+                            <div id="stripe white4" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></div>
                             <div class="black"></div>
-                            <div id="stripe white3" class="stripe"></div>
+                            <div id="stripe white3" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></div>
                             <div class="black"></div>
-                            <div id="stripe white2" class="stripe"></div>
+                            <div id="stripe white2" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></div>
                             <div class="black"></div>
-                            <div id="stripe white1" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" ></div>
+                            <div id="stripe white1" onclick="stripe(this)" class="stripe" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"></div>
                             <div class="black"></div>
                         </div>
                         <div id="whiteTail"></div>
@@ -188,7 +188,7 @@
                 <button type="button" class="btn btn-dark" disabled>capture</button>   
             </div>
             <div>
-            <!-- date modal -->
+            <!-- Promotion Date modal -->
             <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -274,11 +274,15 @@
             }
         }
     }
+    var ColNum ="";
     function stripe(obj){
-        // console.log(obj.attr("id"));
+        ColNum = obj;
     }
     function date(obj){
-        
+        var temp = document.getElementById("promotionDate").value
+        temp = temp.substr(2,8);
+        var date = temp.split("-"); 
+        ColNum.innerHTML = date[0]+"<br>"+date[1]+"<br>"+date[2];
     }
     
 </script>
